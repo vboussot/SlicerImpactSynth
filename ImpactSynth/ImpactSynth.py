@@ -594,7 +594,7 @@ class SegmentationTab(Logic):
         volumeStorageNode.WriteData(self.ui.inputVolumeSelector.currentNode())
         volumeStorageNode.UnRegister(None)
 
-        self.proc = slicer.util.launchConsoleProcess(cmd, useStartupEnvironment=False, cwd=self.workdir)
+        self.proc = slicer.util.launchConsoleProcess(cmd, useStartupEnvironment=False, cwd=str(self.workdir))
         self.wait()
 
         img = self.get_segmentation()
@@ -799,7 +799,7 @@ class QualityTab(Logic):
         volumeStorageNode.WriteData(volume)
         volumeStorageNode.UnRegister(None)
 
-        self.proc = slicer.util.launchConsoleProcess(cmd, useStartupEnvironment=False, cwd=self.workdir)
+        self.proc = slicer.util.launchConsoleProcess(cmd, useStartupEnvironment=False, cwd=str(self.workdir))
         self.wait()
 
         mha_files = list((self.workdir / "Predictions").rglob("*.mha"))
