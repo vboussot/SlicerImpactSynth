@@ -451,7 +451,7 @@ class SynthesisTab(Logic):
         volumeStorageNode.WriteData(self.ui.inputVolumeSelector.currentNode())
         volumeStorageNode.UnRegister(None)
 
-        self.proc = slicer.util.launchConsoleProcess(cmd, useStartupEnvironment=False, cwd=self.workdir)
+        self.proc = slicer.util.launchConsoleProcess(cmd, useStartupEnvironment=False, cwd=str(self.workdir))
         self.wait()
 
         arr = sitk.GetArrayFromImage(self.get_sCT())
