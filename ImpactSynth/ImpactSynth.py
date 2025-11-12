@@ -38,58 +38,7 @@ from slicer.ScriptedLoadableModule import *
 from slicer.util import VTKObservationMixin
 
 
-def download_models_async(download_function):
-    """
-    Lance le téléchargement en tâche de fond, sans bloquer la GUI,
-    mais bloque le code appelant jusqu'à la fin du téléchargement.
-    Retourne (models_path, inference_file_path, model_path).
-    """
-
-    dlg = slicer.util.createProgressDialog(
-        maximum=0,
-        windowTitle="Downloading models",
-        labelText="Downloading from Hugging Face...",
-        parent=slicer.util.mainWindow(),
-    )
-
-    result = {"ok": None, "err": None}
-
-    def worker():
-        try:
-            result["ok"] = download_function()
-        except Exception as e:
-            result["err"] = str(e)
-
-    th = threading.Thread(target=worker, daemon=True)
-    th.start()
-
-    # Boucle d’attente fluide (GUI réactive)
-    loop = QEventLoop()
-    timer = QTimer()
-    timer.setInterval(100)
-
-    def check_done():
-        if th.is_alive():
-            slicer.app.processEvents()
-            return
-        timer.stop()
-        dlg.close()
-        loop.quit()
-
-    timer.timeout.connect(check_done)
-    timer.start()
-    loop.exec_()  # bloque le code appelant mais pas la GUI
-
-    if result["err"]:
-        slicer.util.errorDisplay(f"❌ Hugging Face download error:\n{result['err']}")
-        raise RuntimeError(result["err"])
-
-    slicer.util.infoDisplay("✅ Downloads completed")
-    return result["ok"]
-
-
 IMPACT_SYNTH_KONFAI_REPO = "VBoussot/ImpactSynth"
-
 
 class SynthesisTab(Logic):
 
@@ -437,14 +386,13 @@ class SynthesisTab(Logic):
             "--config",
             f"{model.repo_id}:{model.model_name}",
         ]
-        if device != "cpu":
+        if device:
             cmd += ["--gpu", device]
         else:
             cmd += ["--cpu", "1"]
 
         dataset_p = self.workdir / "Dataset" / "P001"
         dataset_p.mkdir(parents=True, exist_ok=True)
-
         volumeStorageNode = slicer.mrmlScene.CreateNodeByClass("vtkMRMLVolumeArchetypeStorageNode")
         volumeStorageNode.SetFileName(str(dataset_p / "Volume.nii.gz"))
         volumeStorageNode.UseCompressionOff()
@@ -580,7 +528,7 @@ class SegmentationTab(Logic):
         ]
         if self.ui.modelComboBox.currentData.repo_id == MR_SEGMENTATOR_KONFAI_REPO:
             cmd += ["--MODEL", str(self.ui.foldsSpinBox.value)]
-        if device != "cpu":
+        if device:
             cmd += ["--gpu", device]
         else:
             cmd += ["--cpu", "1"]
@@ -785,7 +733,7 @@ class QualityTab(Logic):
             "--MODEL",
             "1",
         ]
-        if device != "cpu":
+        if device:
             cmd += ["--gpu", device]
         else:
             cmd += ["--cpu", "1"]
