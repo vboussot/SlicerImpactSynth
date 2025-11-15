@@ -11,12 +11,16 @@ The extension leverages state-of-the-art models from the **SynthRAD 2025 Challen
 
 <p align="center">
   <figure style="display:inline-block; text-align:center; margin: 0 10px;">
-    <img src="Docs/Synthesis.png" alt="Synthesis interface" width="45%">
-    <figcaption><em>Figure 1 – sCT synthesis interface.</em></figcaption>
+    <img src="docs/Synthesis.png" alt="Synthesis interface" width="45%">
+    <figcaption><em>sCT synthesis interface.</em></figcaption>
   </figure>
   <figure style="display:inline-block; text-align:center; margin: 0 10px;">
-    <img src="Docs/Segmentation.png" alt="Segmentation QA interface" width="45%">
-    <figcaption><em>Figure 2 – Anatomical segmentation and conformity evaluation on the generated sCT.</em></figcaption>
+    <img src="docs/Segmentation.png" alt="Segmentation QA interface" width="45%">
+    <figcaption><em>Anatomical segmentation.</em></figcaption>
+  </figure>
+    <figure style="display:inline-block; text-align:center; margin: 0 10px;">
+    <img src="docs/Evaluation.png" alt="Segmentation QA interface" width="45%">
+    <figcaption><em>Evaluation with reference.</em></figcaption>
   </figure>
 </p>
 
