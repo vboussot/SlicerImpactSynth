@@ -9,21 +9,15 @@ The extension leverages state-of-the-art models from the **SynthRAD 2025 Challen
 
 ## 🖼️ Interface Overview
 
-<p align="center">
-  <figure style="display:inline-block; text-align:center; margin: 0 10px;">
-    <img src="docs/Synthesis.png" alt="Synthesis interface" width="45%">
-    <figcaption><em>sCT synthesis interface.</em></figcaption>
-  </figure>
-  <figure style="display:inline-block; text-align:center; margin: 0 10px;">
-    <img src="docs/Segmentation.png" alt="Segmentation QA interface" width="45%">
-    <figcaption><em>Anatomical segmentation.</em></figcaption>
-  </figure>
-    <figure style="display:inline-block; text-align:center; margin: 0 10px;">
-    <img src="docs/Evaluation.png" alt="Segmentation QA interface" width="45%">
-    <figcaption><em>Evaluation with reference.</em></figcaption>
-  </figure>
-</p>
+| sCT synthesis interface | Segmentation interface |
+|-------------------------|------------------------|
+| <img src="docs/Synthesis.png" alt="Synthesis interface" width="100%"> | <img src="docs/Segmentation.png" alt="Segmentation QA interface" width="100%"> |
+| *Figure 1 – sCT synthesis.* | *Figure 2 – Anatomical segmentation.* |
 
+<p align="center">
+  <img src="docs/Evaluation.png" alt="Evaluation interface" width="45%"><br>
+  <em>Figure 3 – Evaluation with reference.</em>
+</p>
 <p align="center">
   <strong>🎥 Video coming soon…</strong>
 </p>
@@ -96,3 +90,4 @@ The extension leverages state-of-the-art models from the **SynthRAD 2025 Challen
 ---
 
 *Slicer IMPACT-Synth provides an open, transparent, and extensible environment for synthetic CT generation and QA in adaptive radiotherapy — bridging deep learning and clinical usability within 3D Slicer.*
+
