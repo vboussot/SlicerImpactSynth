@@ -20,8 +20,14 @@ The extension leverages state-of-the-art models from the **SynthRAD 2025 Challen
 </p>
 
 ## 🎥 Demonstration Video
-<p align="center"> <video src="docs/Slicer_IMPACT_Synth_video.mp4" width="70%" controls></video><br> <em>Video – Slicer IMPACT-Synth workflow demonstration.</em> </p>
 
+<p align="center">
+  <a href="docs/Slicer_IMPACT_Synth_video.mp4">
+    <img src="docs/Slicer_IMPACT_Synth_thumbnail.png" width="70%">
+  </a>
+  <br>
+  <em>Click the image to view the demo video.</em>
+</p>
 ## ⚙️ Features
 
 ### 🧩 Deep Learning Inference
@@ -83,6 +89,7 @@ The extension leverages state-of-the-art models from the **SynthRAD 2025 Challen
 ---
 
 *Slicer IMPACT-Synth provides an open, transparent, and extensible environment for synthetic CT generation and QA in adaptive radiotherapy — bridging deep learning and clinical usability within 3D Slicer.*
+
 
 
 
