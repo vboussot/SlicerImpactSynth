@@ -52,11 +52,12 @@ https://github.com/user-attachments/assets/dab67476-702e-4252-8680-b6fbf72e64e5
 1. Install **3D Slicer ≥ 5.6**  
 2. Clone this repository:
    ```bash
+   git clone https://github.com/vboussot/SlicerKonfai.git
    git clone https://github.com/vboussot/SlicerImpactSynth.git
    ```
 3. In Slicer, open:  
    **Edit → Application Settings → Modules → Additional Module Paths**  
-   and add the folder `SlicerImpactSynth`
+   and add the folder `SlicerKonfai` and `SlicerImpactSynth`
 4. Restart Slicer and open the **IMPACT-Synth** module.
 
 ---
@@ -84,6 +85,7 @@ https://github.com/user-attachments/assets/dab67476-702e-4252-8680-b6fbf72e64e5
 ---
 
 *Slicer IMPACT-Synth provides an open, transparent, and extensible environment for synthetic CT generation and QA in adaptive radiotherapy — bridging deep learning and clinical usability within 3D Slicer.*
+
 
 
 
