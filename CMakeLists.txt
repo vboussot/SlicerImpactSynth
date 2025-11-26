@@ -10,7 +10,7 @@ set(EXTENSION_CONTRIBUTORS "Valentin Boussot (University of Rennes, France), Cé
 set(EXTENSION_DESCRIPTION "Deep learning-based synthetic CT generation, sCT segmentation, and quality assurance tools powered by KonfAI IMPACT-Synth models.")
 set(EXTENSION_ICONURL "https://raw.githubusercontent.com/vboussot/SlicerImpactSynth/main/ImpactSynth.png")
 set(EXTENSION_SCREENSHOTURLS "")
-set(EXTENSION_DEPENDS "konfai==1.3.6")
+set(EXTENSION_DEPENDS "")
 
 #-----------------------------------------------------------------------------
 # Extension dependencies
