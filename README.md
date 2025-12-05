@@ -1,9 +1,13 @@
 # 🧠 Slicer IMPACT-Synth  
 
+<img src="ImpactSynth.png" alt="IMPACT reg Logo" width="300" align="right">
+
+
 **Slicer IMPACT-Synth** is an open-source 3D Slicer extension designed for the generation of **synthetic CT (sCT)** images from **MRI** or **CBCT** in radiotherapy.  
 It provides a dedicated integration of the IMPACT-Synth framework within the 3D Slicer environment, making advanced deep learning–based sCT generation as well as comprehensive quality-assurance (QA) tools accessible for routine clinical practice and research workflows in radiotherapy.
 
 The extension leverages state-of-the-art models from the **SynthRAD 2025 Challenge [1]**, ranked *3rd* in both MRI→CT and CBCT→CT tasks, and is powered by **KonfAI [3]**, a modular deep learning framework ensuring **fast inference**, **reproducibility**, **flexible deployment**, and **seamless integration** into clinical workflows.
+
 
 ---
 
@@ -85,6 +89,7 @@ https://github.com/user-attachments/assets/dab67476-702e-4252-8680-b6fbf72e64e5
 ---
 
 *Slicer IMPACT-Synth provides an open, transparent, and extensible environment for synthetic CT generation and QA in adaptive radiotherapy — bridging deep learning and clinical usability within 3D Slicer.*
+
 
 
 
