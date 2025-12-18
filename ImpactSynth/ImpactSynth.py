@@ -16,7 +16,7 @@ class ImpactSynth(ScriptedLoadableModule):
     def __init__(self, parent):
         ScriptedLoadableModule.__init__(self, parent)
         self.parent.title = _("Impact Synth")
-        self.parent.categories = [translate("qSlicerAbstractCoreModule", "Synthesis")]
+        self.parent.categories = [translate("qSlicerAbstractCoreModule", "Image Synthesis")]
         self.parent.dependencies = ["KonfAI"]
         self.parent.contributors = [
             "Valentin Boussot (University of Rennes, France)",
@@ -84,6 +84,7 @@ class ImpactSynthWidget(ScriptedLoadableModuleWidget, VTKObservationMixin):
         )
         self.konfai_core.register_apps([impact_synth_widget, impact_seg_widget])
         self.layout.addWidget(self.konfai_core)
+        self.konfai_core.enter()
 
     def cleanup(self) -> None:
         """
@@ -99,7 +100,7 @@ class ImpactSynthWidget(ScriptedLoadableModuleWidget, VTKObservationMixin):
         This hook can be used to ensure state is up-to-date when the user
         returns to the module. Currently no additional logic is required.
         """
-        pass
+        self.konfai_core.enter()
 
     def exit(self) -> None:  # noqa: A003
         """
@@ -108,4 +109,4 @@ class ImpactSynthWidget(ScriptedLoadableModuleWidget, VTKObservationMixin):
         This hook can be used to pause or finalize ongoing tasks, but
         no special handling is required at the moment.
         """
-        pass
+        self.konfai_core.exit()
