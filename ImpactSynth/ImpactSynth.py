@@ -1,3 +1,4 @@
+from KonfAI import KonfAIAppTemplateWidget, KonfAICoreWidget, _is_reload_setup
 from qt import QWidget
 from slicer.i18n import tr as _
 from slicer.i18n import translate
@@ -75,7 +76,6 @@ class ImpactSynthWidget(ScriptedLoadableModuleWidget, VTKObservationMixin):
         This method is called once when the user first opens the module.
         """
         super().setup()
-        from KonfAI import KonfAIAppTemplateWidget, KonfAICoreWidget
 
         self.konfai_core = KonfAICoreWidget("Impact Synth")
         impact_synth_widget = KonfAIAppTemplateWidget("Synthesis", ["VBoussot/ImpactSynth"])
@@ -84,7 +84,9 @@ class ImpactSynthWidget(ScriptedLoadableModuleWidget, VTKObservationMixin):
         )
         self.konfai_core.register_apps([impact_synth_widget, impact_seg_widget])
         self.layout.addWidget(self.konfai_core)
-        self.konfai_core.enter()
+
+        if _is_reload_setup("SlicerImpactSynth"):
+            self.konfai_core.enter()
 
     def cleanup(self) -> None:
         """
