@@ -1,9 +1,24 @@
+# Copyright (c) 2025 Valentin Boussot
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+
 from KonfAI import KonfAIAppTemplateWidget, KonfAICoreWidget, _is_reload_setup
 from qt import QWidget
 from slicer.i18n import tr as _
 from slicer.i18n import translate
 from slicer.ScriptedLoadableModule import ScriptedLoadableModule, ScriptedLoadableModuleWidget
-from slicer.util import VTKObservationMixin
 
 
 #
@@ -54,7 +69,7 @@ class ImpactSynth(ScriptedLoadableModule):
         )
 
 
-class ImpactSynthWidget(ScriptedLoadableModuleWidget, VTKObservationMixin):
+class ImpactSynthWidget(ScriptedLoadableModuleWidget):
     """
     Top-level scripted loadable module widget for KonfAI.
 
@@ -67,7 +82,6 @@ class ImpactSynthWidget(ScriptedLoadableModuleWidget, VTKObservationMixin):
         Called when the user opens the module the first time and the widget is initialized.
         """
         super().__init__(parent)
-        VTKObservationMixin.__init__(self)  # needed for parameter node observation
 
     def setup(self) -> None:
         """
@@ -92,7 +106,6 @@ class ImpactSynthWidget(ScriptedLoadableModuleWidget, VTKObservationMixin):
         """
         Called when the application closes and the module widget is destroyed.
         """
-        self.removeObservers()
         self.konfai_core.cleanup()
 
     def enter(self) -> None:
