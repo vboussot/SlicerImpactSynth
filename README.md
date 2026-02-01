@@ -36,7 +36,7 @@ https://github.com/user-attachments/assets/dab67476-702e-4252-8680-b6fbf72e64e5
 This quick tutorial demonstrates the typical clinical workflow: **load → run inference → review results → assess reliability**.
 
 ### 1) Install and open the module
-1. Install **3D Slicer ≥ 5.6**
+1. Install **3D Slicer ≥ 5.10**
 2. Open **3D Slicer** and go to **Extension Manager**
 3. Search for **ImpactSynth**
 4. Click **Install**
@@ -168,6 +168,7 @@ This allows:
 ---
 
 *Slicer IMPACT-Synth provides an open, transparent, and extensible environment for synthetic CT generation and QA in adaptive radiotherapy — bridging deep learning and clinical usability within 3D Slicer.*
+
 
 
 
