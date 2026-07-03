@@ -14,6 +14,7 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
+import slicer
 from KonfAI import KonfAIAppTemplateWidget, KonfAICoreWidget, _is_reload_setup
 from qt import QWidget
 from slicer.i18n import tr as _
@@ -71,17 +72,22 @@ class ImpactSynth(ScriptedLoadableModule):
 
 class ImpactSynthWidget(ScriptedLoadableModuleWidget):
     """
-    Top-level scripted loadable module widget for KonfAI.
+    Top-level scripted loadable module widget for ImpactSynth.
 
     This class ties together the Slicer module system with the KonfAICoreWidget,
     which handles actual application logic and GUI.
     """
+
+    # Major version of the KonfAI extension API this module is written against.
+    # KonfAI only bumps it on breaking changes, after a deprecation cycle.
+    REQUIRED_KONFAI_API_MAJOR = 2
 
     def __init__(self, parent: QWidget | None = None) -> None:
         """
         Called when the user opens the module the first time and the widget is initialized.
         """
         super().__init__(parent)
+        self.konfai_core = None
 
     def setup(self) -> None:
         """
@@ -90,6 +96,17 @@ class ImpactSynthWidget(ScriptedLoadableModuleWidget):
         This method is called once when the user first opens the module.
         """
         super().setup()
+
+        import KonfAI as konfai_module  # noqa: N813
+
+        api_version = getattr(konfai_module, "KONFAI_SLICER_API_VERSION", (1, 0))
+        if api_version[0] != self.REQUIRED_KONFAI_API_MAJOR:
+            slicer.util.errorDisplay(
+                f"ImpactSynth requires the KonfAI extension API version {self.REQUIRED_KONFAI_API_MAJOR}.x, "
+                f"but the installed KonfAI extension provides {api_version[0]}.{api_version[1]}.\n\n"
+                "Please update the KonfAI and ImpactSynth extensions together."
+            )
+            return
 
         self.konfai_core = KonfAICoreWidget("Impact Synth")
         impact_synth_widget = KonfAIAppTemplateWidget("Synthesis", ["VBoussot/ImpactSynth"])
@@ -106,7 +123,8 @@ class ImpactSynthWidget(ScriptedLoadableModuleWidget):
         """
         Called when the application closes and the module widget is destroyed.
         """
-        self.konfai_core.cleanup()
+        if self.konfai_core is not None:
+            self.konfai_core.cleanup()
 
     def enter(self) -> None:
         """
@@ -115,7 +133,8 @@ class ImpactSynthWidget(ScriptedLoadableModuleWidget):
         This hook can be used to ensure state is up-to-date when the user
         returns to the module. Currently no additional logic is required.
         """
-        self.konfai_core.enter()
+        if self.konfai_core is not None:
+            self.konfai_core.enter()
 
     def exit(self) -> None:  # noqa: A003
         """
@@ -124,4 +143,5 @@ class ImpactSynthWidget(ScriptedLoadableModuleWidget):
         This hook can be used to pause or finalize ongoing tasks, but
         no special handling is required at the moment.
         """
-        self.konfai_core.exit()
+        if self.konfai_core is not None:
+            self.konfai_core.exit()

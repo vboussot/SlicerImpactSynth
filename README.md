@@ -1,9 +1,9 @@
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/vboussot/KonfAI/blob/main/LICENSE)
-[![Paper](https://img.shields.io/badge/📌%20Paper-KonfAI-blue)](https://arxiv.org/abs/2510.21358)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/vboussot/SlicerImpactSynth/blob/main/LICENSE)
+[![Paper](https://img.shields.io/badge/📌%20Paper-KonfAI-blue)](https://arxiv.org/abs/2508.09823)
 
 # 🧠 Slicer IMPACT-Synth  
 
-<img src="ImpactSynth.png" alt="IMPACT reg Logo" width="300" align="right">
+<img src="ImpactSynth.png" alt="IMPACT Synth Logo" width="300" align="right">
 
 
 **Slicer IMPACT-Synth** is an open-source 3D Slicer extension designed for the generation of **synthetic CT (sCT)** images from **MRI** or **CBCT**.  
@@ -57,7 +57,7 @@ This quick tutorial demonstrates the typical clinical workflow: **load → run i
 
 ✅ You can now inspect the results in 2D and 3D and adjust visualization (opacity, label colors, 3D rendering).
 
-### 5) QA with reference
+### 4) QA with reference
 If you have a CT registered with the input image, you can further validate the generated sCT:
 
 1. Load the reference CT
@@ -78,7 +78,7 @@ If you have a CT registered with the input image, you can further validate the g
     - SSIM
     - Dice
 
-### 4) QA without reference (uncertainty estimation)
+### 5) QA without reference (uncertainty estimation)
 When no ground truth annotation is available, you can still assess prediction reliability.
 
 1. Go to the **Synthesis** tab, then to the **Evaluation** tab and select **No reference (Uncertainty)**
