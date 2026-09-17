@@ -1,5 +1,6 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/vboussot/SlicerImpactSynth/blob/main/LICENSE)
 [![Paper](https://img.shields.io/badge/📌%20Paper-KonfAI-blue)](https://arxiv.org/abs/2508.09823)
+[![Paper](https://img.shields.io/badge/📌%20Paper-TotalSynth-blue)](https://arxiv.org/abs/2609.13838)
 
 # 🧠 Slicer IMPACT-Synth  
 
