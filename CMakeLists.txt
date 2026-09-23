@@ -7,9 +7,9 @@ project(ImpactSynth)
 set(EXTENSION_HOMEPAGE "https://github.com/vboussot/SlicerImpactSynth")
 set(EXTENSION_CATEGORY "Image Synthesis")
 set(EXTENSION_CONTRIBUTORS "Valentin Boussot (University of Rennes, France), Cédric Hémon (University of Rennes, France), Jean-Louis Dillenseger (University of Rennes, France)")
-set(EXTENSION_DESCRIPTION "Deep learning-based synthetic CT generation, sCT segmentation, and quality assurance tools powered by KonfAI IMPACT-Synth models.")
+set(EXTENSION_DESCRIPTION "Synthetic CT from MRI or CBCT with the TotalSynth models, evaluation with or without a reference CT, and segmentation of the synthetic CT, powered by KonfAI.")
 set(EXTENSION_ICONURL "https://raw.githubusercontent.com/vboussot/SlicerImpactSynth/main/ImpactSynth.png")
-set(EXTENSION_SCREENSHOTURLS "https://raw.githubusercontent.com/vboussot/SlicerImpactSynth/main/docs/Synthesis.png https://raw.githubusercontent.com/vboussot/SlicerImpactSynth/main/docs/Segmentation.png https://raw.githubusercontent.com/vboussot/SlicerImpactSynth/main/docs/Evaluation.png")
+set(EXTENSION_SCREENSHOTURLS "https://raw.githubusercontent.com/vboussot/SlicerImpactSynth/main/Screenshots/main.png https://raw.githubusercontent.com/vboussot/SlicerImpactSynth/main/Screenshots/tutorial/03-sct.jpg https://raw.githubusercontent.com/vboussot/SlicerImpactSynth/main/Screenshots/tutorial/04-evaluation.jpg https://raw.githubusercontent.com/vboussot/SlicerImpactSynth/main/Screenshots/tutorial/06-segmentation.jpg")
 set(EXTENSION_DEPENDS "KonfAI")
 
 #-----------------------------------------------------------------------------
