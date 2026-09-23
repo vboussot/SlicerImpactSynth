@@ -33,6 +33,10 @@
 
 <!-- Drop Screenshots/SlicerImpactSynth-tutorial.mp4 into the README editor on GitHub and paste the user-attachments URL it gives here: GitHub then embeds a player. -->
 
+
+https://github.com/user-attachments/assets/0ead176b-3e2c-4265-9403-ca4ee34fd53f
+
+
 **[Watch the walkthrough](Screenshots/SlicerImpactSynth-tutorial.mp4)** (2 min, with captions), recorded on a head-and-neck MRI/CT pair and a head-and-neck CBCT/CT pair of the public SynthRAD2025 dataset.
 👉 Step by step with screenshots: [`TUTORIAL.md`](TUTORIAL.md)
 
