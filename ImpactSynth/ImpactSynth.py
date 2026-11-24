@@ -111,7 +111,13 @@ class ImpactSynthWidget(ScriptedLoadableModuleWidget):
         self.konfai_core = KonfAICoreWidget("Impact Synth")
         impact_synth_widget = KonfAIAppTemplateWidget("Synthesis", ["VBoussot/ImpactSynth"])
         impact_seg_widget = KonfAIAppTemplateWidget(
-            "Segmentation", ["VBoussot/MRSegmentator-KonfAI", "VBoussot/TotalSegmentator-KonfAI", "VBoussot/ImpactSeg"]
+            "Segmentation",
+            [
+                "VBoussot/MRSegmentator-KonfAI",
+                "VBoussot/TotalSegmentator-KonfAI",
+                "VBoussot/ImpactSeg",
+                "HCedric/IMPACTSeg",
+            ],
         )
         self.konfai_core.register_apps([impact_synth_widget, impact_seg_widget])
         self.layout.addWidget(self.konfai_core)
