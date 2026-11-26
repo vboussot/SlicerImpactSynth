@@ -168,7 +168,7 @@ konfai-apps fine-tune VBoussot/ImpactSynth:MR MyCenter_MR -d /data/pairs --model
 
 ## 🧩 What the extension is made of
 
-The module registers two app templates on the `KonfAI` facade of the KonfAI extension: **Synthesis** (the four TotalSynth apps of `VBoussot/ImpactSynth`) and **Segmentation** (`VBoussot/TotalSegmentator-KonfAI`, `VBoussot/MRSegmentator-KonfAI`, `VBoussot/ImpactSeg`). The app list, the inference and evaluation panels, the process manager, the device and remote-server rows all come from [SlicerKonfAI](https://github.com/vboussot/SlicerKonfAI) (API version 2). Any other KonfAI app can be added to either tab from Hugging Face or from a local folder.
+The module registers two app templates on the `KonfAI` facade of the KonfAI extension: **Synthesis** (the four TotalSynth apps of `VBoussot/ImpactSynth`) and **Segmentation** (`VBoussot/TotalSegmentator-KonfAI`, `VBoussot/MRSegmentator-KonfAI`, `VBoussot/ImpactSeg`, `HCedric/IMPACTSeg`). The app list, the inference and evaluation panels, the process manager, the device and remote-server rows all come from [SlicerKonfAI](https://github.com/vboussot/SlicerKonfAI) (API version 2). Any other KonfAI app can be added to either tab from Hugging Face or from a local folder.
 
 Run from source:
 
